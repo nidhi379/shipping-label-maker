@@ -1,0 +1,29 @@
+<p>Table is just a mapping of objects to table rows with <code>ngFor</code></p>
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Pdf</th>
+    <th scope="col">RTF</th>
+    <th scope="col">DocumentName</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let country of countries; index as i">
+   
+    <td>
+      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+      {{ country.name }}
+    </td>
+    <td>{{ country.area | number }}</td>
+    <td>{{ country.documentname| number }}</td>
+  </tr>
+  </tbody>
+</table>
